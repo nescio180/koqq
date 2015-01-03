@@ -1,0 +1,32 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    tools:context=".QuizActivity">
+
+    <Button
+        android:id="@+id/btn_start"
+        android:text="Start"
+        android:background="@drawable/koq_background_selector"
+        android:layout_width="wrap_content"
+        android:textStyle="bold"
+        android:paddingLeft="50dp"
+        android:paddingRight="50dp"
+        android:layout_marginBottom="30dp"
+        android:textColor="@android:color/white"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_height="wrap_content" />
+
+    <ImageView
+        android:layout_alignParentTop="true"
+        android:layout_above="@id/btn_start"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="30dp"
+        android:adjustViewBounds="true"
+        android:src="@drawable/quiz_title"
+        android:scaleType="fitCenter" />
+
+</RelativeLayout>

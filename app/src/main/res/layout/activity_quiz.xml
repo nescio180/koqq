@@ -57,7 +57,7 @@
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:layout_alignParentTop="true"
-        android:background="@drawable/koq_background_selector"
+        android:background="@drawable/koq_title_icon_web"
         android:layout_above="@id/llayout_answers">
     </LinearLayout>
 </RelativeLayout>
