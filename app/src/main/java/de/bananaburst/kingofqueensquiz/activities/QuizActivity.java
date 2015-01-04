@@ -1,11 +1,14 @@
 package de.bananaburst.kingofqueensquiz.activities;
 
+import android.animation.AnimatorInflater;
+import android.animation.AnimatorSet;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -27,6 +30,7 @@ public class QuizActivity extends ActionBarActivity implements ChoiceListener.Cl
     private Button mRightButton;
     private RelativeLayout mLayoutMain;
     private TextView mQuizText;
+    private ImageView mQuizImage;
 
     private ArrayList<Button> mButtonList = new ArrayList<>();
 
@@ -46,6 +50,7 @@ public class QuizActivity extends ActionBarActivity implements ChoiceListener.Cl
         mLayoutMain = (RelativeLayout) findViewById(R.id.layout_main);
 
         mQuizText = (TextView) findViewById(R.id.quiz_text);
+        mQuizImage= (ImageView) findViewById(R.id.quiz_image);
 
         mAnswerButtonA = (Button) findViewById(R.id.button_answer_a);
         mAnswerButtonB = (Button) findViewById(R.id.button_answer_b);
@@ -95,6 +100,7 @@ public class QuizActivity extends ActionBarActivity implements ChoiceListener.Cl
 
     @Override
     public void onAnimationDone() {
+        mButtonAnimator.animateImageAndText(mQuizImage);
         startNewQuestion();
     }
 }
