@@ -7,6 +7,7 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -25,6 +26,7 @@ public class QuizActivity extends ActionBarActivity implements ChoiceListener.Cl
     private Button mAnswerButtonD;
     private Button mRightButton;
     private RelativeLayout mLayoutMain;
+    private TextView mQuizText;
 
     private ArrayList<Button> mButtonList = new ArrayList<>();
 
@@ -42,6 +44,8 @@ public class QuizActivity extends ActionBarActivity implements ChoiceListener.Cl
         setContentView(R.layout.activity_quiz);
 
         mLayoutMain = (RelativeLayout) findViewById(R.id.layout_main);
+
+        mQuizText = (TextView) findViewById(R.id.quiz_text);
 
         mAnswerButtonA = (Button) findViewById(R.id.button_answer_a);
         mAnswerButtonB = (Button) findViewById(R.id.button_answer_b);
@@ -71,7 +75,9 @@ public class QuizActivity extends ActionBarActivity implements ChoiceListener.Cl
         mChoiceListener.invalidateAll();
         mLayoutMain.invalidate();
 
-        Question newQuestion = mDataBase.getRandomQuestion();
+        Question newQuestion = mDataBase.getNextQuestion();
+
+        mQuizText.setText(newQuestion.getQuestion());
 
         Collections.shuffle(mButtonList);
         mButtonList.get(0).setText(newQuestion.getRightAnswer());

@@ -41,7 +41,7 @@
             android:layout_width="fill_parent"
             android:textStyle="bold"
             android:textColor="@android:color/white"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content" />
 
         <Button
             android:id="@+id/button_answer_d"
@@ -54,11 +54,29 @@
             android:layout_height="wrap_content" />
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
+    <ImageView
         android:layout_alignParentTop="true"
-        android:background="@drawable/koq_title_icon_web"
-        android:layout_above="@id/llayout_answers">
-    </LinearLayout>
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="30dp"
+        android:adjustViewBounds="true"
+        android:src="@drawable/koq_title_icon_web"
+        android:layout_above="@id/llayout_answers"
+        android:scaleType="fitCenter"
+        android:visibility="invisible"
+        />
+
+    <TextView
+        android:id="@+id/quiz_text"
+        android:textStyle="bold"
+        android:textSize="24sp"
+        android:gravity="center"
+        android:text="TEST"
+        android:textColor="@android:color/black"
+        android:layout_alignParentTop="true"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="30dp"
+        android:layout_above="@id/llayout_answers"/>
+
 </RelativeLayout>
